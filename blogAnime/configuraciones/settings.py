@@ -42,6 +42,7 @@ INSTALLED_APPS = [
 
     'apps.posts',
     'apps.usuario',
+    'apps.contacto',
 ]
 
 MIDDLEWARE = [
@@ -138,3 +139,7 @@ LOGIN_REDIRECT_URL = '/'
 
 # URL a la que se redirige después de cerrar sesión
 LOGOUT_REDIRECT_URL = '/'
+
+# Configuración de Correo Electrónico
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend' 
+DEFAULT_FROM_EMAIL = 'no-responder@animeblog.com'

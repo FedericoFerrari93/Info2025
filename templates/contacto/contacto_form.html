@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block contenido %}
+<div class="row justify-content-center mt-5">
+    <div class="col-md-6">
+        <div class="card shadow">
+            <div class="card-header bg-dark text-white text-center">
+                <h4>Contáctanos</h4>
+            </div>
+            <div class="card-body">
+                <p>Usa el siguiente formulario para enviarnos un mensaje.</p>
+                
+                <form method="post">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    
+                    <button type="submit" class="btn btn-primary w-100 mt-3">Enviar Mensaje</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
