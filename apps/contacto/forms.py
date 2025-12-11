@@ -1,28 +1,45 @@
+# apps/contacto/forms.py
+
 from django import forms
 
 class ContactoForm(forms.Form):
-    # Campo para el nombre del remitente (máx. 100 caracteres)
     nombre = forms.CharField(
+        label='Nombre',
         max_length=100,
         required=True,
-        widget=forms.TextInput(attrs={'placeholder': 'Tu Nombre Completo'})
+        widget=forms.TextInput(attrs={
+            # Agregamos 'form-control-dark' aquí
+            'class': 'form-control form-control-dark', 
+            'placeholder': 'Tu nombre completo'
+        })
     )
     
-    # Campo para el email del remitente (será la dirección de respuesta)
     email = forms.EmailField(
+        label='Correo Electrónico',
         required=True,
-        widget=forms.EmailInput(attrs={'placeholder': 'tu.correo@ejemplo.com'})
+        widget=forms.EmailInput(attrs={
+            'class': 'form-control form-control-dark', 
+            'placeholder': 'tu.correo@ejemplo.com'
+        })
     )
     
-    # Campo para el asunto del mensaje
     asunto = forms.CharField(
+        label='Asunto',
         max_length=150,
         required=True,
-        widget=forms.TextInput(attrs={'placeholder': 'Asunto del Mensaje'})
+        widget=forms.TextInput(attrs={
+            'class': 'form-control form-control-dark', 
+            'placeholder': 'El motivo de tu contacto'
+        })
     )
     
-    # Campo para el contenido del mensaje
     mensaje = forms.CharField(
+        label='Mensaje',
         required=True,
-        widget=forms.Textarea(attrs={'rows': 5, 'placeholder': 'Escribe tu mensaje aquí...'})
+        widget=forms.Textarea(attrs={
+            'class': 'form-control form-control-dark', 
+            'rows': 5, 
+            'placeholder': 'Escribe tu mensaje aquí...',
+            'style': 'resize: none;' 
+        })
     )

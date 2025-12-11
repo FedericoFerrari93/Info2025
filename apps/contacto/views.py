@@ -32,6 +32,7 @@ def contacto(request):
                     recipient_list=['pobarinfo25@gmail.com'], 
                     fail_silently=False,
                 )
+                messages.success(request, "Tu mensaje ha sido enviado con éxito.")
                 
                 # pagina de exito despues de enviar el correo
                 return redirect('apps.contacto:contacto_gracias') 
